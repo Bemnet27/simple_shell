@@ -1,4 +1,5 @@
 #include "header.h"
+#include <stdio.h>
 /**
  * prompt - function to displays the prompt
  */
