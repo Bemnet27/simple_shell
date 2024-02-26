@@ -1,13 +1,23 @@
 #include "header.h"
-ssize_t read_cmd()
+char *read_cmd()
 {
 	char *line = NULL;
 	size_t n = 0;
+	ssize_t read_line;
 
-	if (getline(&line, &n, stdin) == -1)
+	read_line = getline(&line, &n, stdin);
+	if (read_line == -1)
 	{
-		perror("./hsh: 1: ");
-		return(-1);
+		if (feof(stdin))
+		{
+			return(NULL);
+		}
+		else
+		{
+			perror("./simple_sell: ");
+			exit(-1);
+		}
 	}
-	return(0);
+	line[strcspn(line, "\n")] = '\0';
+	return(line);
 }

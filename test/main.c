@@ -1,10 +1,18 @@
 #include "header.h"
 int main()
 {
-	while (read_cmd() != EOF)
+	char *_read;
+	while (1)
 	{
-		prompt();
-		read_cmd();
+		printf("simple_shell$ ");
+		_read = read_cmd();
+		if (_read == NULL)
+		{
+			printf("\n");
+			break;
+		}
+		execute_cmd(_read);
+		free(_read);
 	}
 	return(0);
 }
