@@ -11,7 +11,7 @@ int main(void)
 
 	while (1)
 	{
-		printf("simple_shell$ ");
+		write(STDOUT_FILENO, "simple_shell$ ", 14);
 		_read = read_cmd();
 
 		if (_read == NULL)
