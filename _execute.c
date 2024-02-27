@@ -1,7 +1,7 @@
 #include "header.h"
 /**
  * execute_cmd - execute a program on the child process passed from stdin
- * @array: a line read from stdin
+ * @array: tokenized strings
  *
  * Return: nothing
  */
