@@ -14,14 +14,14 @@ void execute_cmd(char **array)
 	pid = fork();
 	if (pid == -1)
 	{
-		perror("./simple_shell ");
+		perror("./simple_shell");
 		exit(-1);
 	}
 	else if (pid == 0)
 	{
 		if (execve(array[0], array, envp) == -1)
 		{
-			perror("./simple_shell ");
+			perror("./simple_shell");
 			exit(-1);
 		}
 	}
