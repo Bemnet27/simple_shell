@@ -1,9 +1,8 @@
 #include "header.h"
-extern char **environ;
 
-void execute_cmd(char *_read)
+void execute_cmd(char **array)
 {
-	char *args[] = {NULL, NULL};
+	char *envp[] = {NULL};
 	pid_t pid;
 
 	pid = fork();
@@ -14,8 +13,7 @@ void execute_cmd(char *_read)
 	}
 	else if (pid == 0)
 	{
-		args[0] = _read;
-		if (execve(_read, args, environ) == -1)
+		if (execve(array[0], array, envp) == -1)
 		{
 			perror("./simple_shell ");
 			exit(-1);

@@ -7,6 +7,7 @@
 int main(void)
 {
 	char *_read;
+	char **array;
 
 	while (1)
 	{
@@ -18,8 +19,10 @@ int main(void)
 			printf("\n");
 			break;
 		}
-		execute_cmd(_read);
+		array = array_word(_read, " ");
+		execute_cmd(array);
 		free(_read);
+		free(array);
 	}
 	return (0);
 }

@@ -2,6 +2,7 @@
 int main()
 {
 	char *_read;
+	char **array;
 	while (1)
 	{
 		printf("simple_shell$ ");
@@ -11,8 +12,10 @@ int main()
 			printf("\n");
 			break;
 		}
-		execute_cmd(_read);
+		array = array_word(_read, " ");
+		execute_cmd(array);
 		free(_read);
+		free(array);
 	}
 	return(0);
 }

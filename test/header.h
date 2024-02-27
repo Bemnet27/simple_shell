@@ -7,5 +7,6 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 char *read_cmd();
-void execute_cmd(char *_read);
+void execute_cmd(char **array);
+char **array_word(char *_read, char *delim);
 #endif

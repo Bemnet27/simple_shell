@@ -1,14 +1,13 @@
 #include "header.h"
 /**
  * execute_cmd - execute a program on the child process passed from stdin
- * @_read: a line read from stdin
+ * @array: a line read from stdin
  *
  * Return: nothing
  */
 
-void execute_cmd(char *_read)
+void execute_cmd(char **array)
 {
-	char *args[] = {NULL, NULL};
 	char *envp[] = {NULL};
 	pid_t pid;
 
@@ -20,8 +19,7 @@ void execute_cmd(char *_read)
 	}
 	else if (pid == 0)
 	{
-		args[0] = _read;
-		if (execve(_read, args, envp) == -1)
+		if (execve(array[0], array, envp) == -1)
 		{
 			perror("./simple_shell ");
 			exit(-1);
