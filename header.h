@@ -4,5 +4,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-void prompt(void);
+#include <sys/wait.h>
+#include <sys/types.h>
+char *read_cmd();
+void execute_cmd(char *_read);
 #endif
