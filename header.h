@@ -9,4 +9,5 @@
 char *read_cmd();
 void execute_cmd(char **array);
 char **array_word(char *_read, char *delim);
+extern char **environ;
 #endif

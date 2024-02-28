@@ -2,7 +2,7 @@
 
 void execute_cmd(char **array)
 {
-	char *envp[] = {NULL};
+	char **envp = environ;
 	pid_t pid;
 
 	pid = fork();
@@ -16,7 +16,7 @@ void execute_cmd(char **array)
 		if (array[0] == NULL)
 		{
 			perror(":/simple_shell$ ");
-			return (NULL);
+			exit(-1);
 		}
 		if (execve(array[0], array, envp) == -1)
 		{

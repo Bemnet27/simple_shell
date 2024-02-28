@@ -8,8 +8,8 @@
 
 void execute_cmd(char **array)
 {
-	char *envp[] = {NULL};
 	pid_t pid;
+	char **envp = environ;
 
 	pid = fork();
 	if (pid == -1)
