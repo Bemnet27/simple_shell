@@ -15,7 +15,7 @@ char *read_cmd()
 	{
 		if (feof(stdin))
 		{
-			return (NULL);
+			return(NULL);
 		}
 		else
 		{

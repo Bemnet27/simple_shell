@@ -11,7 +11,7 @@ int main(void)
 
 	while (1)
 	{
-		write(STDOUT_FILENO, "simple_shell$ ", 14);
+		printf("simple_shell$ ");
 		_read = read_cmd();
 
 		if (_read == NULL)
@@ -20,6 +20,12 @@ int main(void)
 			break;
 		}
 		array = array_word(_read, " ");
+		if (array == NULL)
+		{
+			free(_read);
+			perror("./simle_shell:");
+			continue;
+		}
 		execute_cmd(array);
 		free(_read);
 		free(array);
