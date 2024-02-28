@@ -14,8 +14,8 @@ int main()
 		}
 		array = array_word(_read, " ");
 		execute_cmd(array);
-		free(_read);
 		free(array);
+		free(_read);
 	}
 	return(0);
 }
