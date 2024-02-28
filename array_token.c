@@ -20,6 +20,7 @@ char **array_word(char *_read, char *delim)
 		array_size++;
 		token = strtok(NULL, delim);
 	}
+	free(line_dup);
 	array = malloc(sizeof(char *) * (array_size + 1));
 	if (array == NULL)
 	{

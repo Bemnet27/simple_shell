@@ -10,6 +10,7 @@ char *read_cmd()
 	{
 		if (feof(stdin))
 		{
+			free(line);
 			return(NULL);
 		}
 		else
