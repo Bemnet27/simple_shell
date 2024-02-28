@@ -6,6 +6,7 @@ char *get_env(char **env, char *needed) {
     while (*env) {
 	    if (*env != NULL){
         array_word(needed, "=");
+	printf("%s\n", *env);
         env++;
 	    }
 	    else
