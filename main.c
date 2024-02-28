@@ -11,12 +11,18 @@ int main(void)
 
 	while (1)
 	{
-		printf("simple_shell$ ");
+		if (isatty(STDIN_FILENO))
+		{
+			printf("simple_shell$ ");
+		}
 		_read = read_cmd();
 
 		if (_read == NULL)
 		{
-			printf("\n");
+			if (isatty(STDIN_FILENO))
+			{
+				printf("\n");
+			}
 			break;
 		}
 		array = array_word(_read, " ");

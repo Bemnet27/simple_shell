@@ -1,16 +1,22 @@
 #include "header.h"
 int main()
 {
-	char *_read;
+	char *_read = NULL;
 	char **array;
 	while (1)
 	{
-		printf("simple_shell$ ");
+		if (isatty(STDIN_FILENO))
+		{
+			printf("simple_shell$ ");
+		}
 		_read = read_cmd();
 		if (_read == NULL)
 		{
-			printf("\n");
-			break;
+			if (isatty(STDIN_FILENO))
+			{
+				printf("\n");
+			}
+				break;
 		}
 		array = array_word(_read, " ");
 		if (array == NULL)
