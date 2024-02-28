@@ -10,4 +10,5 @@ char *read_cmd();
 extern char **environ;
 void execute_cmd(char **array);
 char **array_word(char *_read, char *delim);
+char *get_env(char **env, char *needed);
 #endif
