@@ -1,10 +1,14 @@
 #include "header.h"
 
-void get_all_env(char **env)
+void get_all_env(char *envp[])
 {
-    while (*env)
+	int n = 0;
+	char *envvv = envp[n];
+
+    while (envvv != NULL)
     {
-        printf("%s\n", *env);
-        *env++;
+        printf("%s\n", envvv);
+        n++;
+	envvv = envp[n];
     }
 }
