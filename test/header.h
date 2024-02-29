@@ -11,4 +11,6 @@ extern char **environ;
 void execute_cmd(char **array);
 char **array_word(char *_read, char *delim);
 char *get_env(char **env, char *needed);
+void with_path(char **raw);
+char *getthepath(char *command);
 #endif

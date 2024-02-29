@@ -13,7 +13,6 @@ void execute_cmd(char **array)
 	}
 	else if (pid == 0)
 	{
-		get_env(envp, *array);
 		if (array[0] == NULL)
 		{
 			perror(":/simple_shell$ ");
