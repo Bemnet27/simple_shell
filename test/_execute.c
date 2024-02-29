@@ -6,6 +6,7 @@ void execute_cmd(char **array)
 	pid_t pid;
 
 	pid = fork();
+	get_all_env(envp);
 	if (pid == -1)
 	{
 		perror("./simple_shell ");
