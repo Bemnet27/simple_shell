@@ -14,4 +14,5 @@ char *get_env(char **env, char *needed);
 void with_path(char **raw);
 char *getthepath(char *command);
 void get_all_env(char *envp[]);
+int printenv(char *envp[]);
 #endif
