@@ -3,6 +3,7 @@ int main()
 {
 	char *_read = NULL;
 	char **array;
+
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
