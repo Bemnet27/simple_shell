@@ -26,7 +26,7 @@ int main()
                         perror("./simle_shell:");
                         continue;
                 }
-		getthepath(_read);
+		printenv(array);
 		execute_cmd(array);
 		free(array);
 		free(_read);
